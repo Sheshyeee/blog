@@ -28,14 +28,13 @@ Route::middleware(['custom.auth'])->group(function () {
     Route::post('/Like/{post}', [PostsController::class, 'like'])->name('like.store');
 
     // Admin-only routes
-    Route::middleware('admin')->group(function () {
-        Route::get('/register', [UserController::class, 'showRegister'])->name('register.show');
-        Route::post('/register', [UserController::class, 'register'])->name('register.store');
-        Route::get('/role', [UserController::class, 'showRole'])->name('role.show');
-        Route::post('/role', [UserController::class, 'storeRole'])->name('role.store');
-        Route::get('/all_user', [UserController::class, 'allUser'])->name('allUsers.show');
-        Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
-        Route::get('/user/{id}', [UserController::class, 'edit'])->name('user.edit');
-        Route::put('/user/{id}', [UserController::class, 'update'])->name('user.update');
-    });
+
+    Route::get('/register', [UserController::class, 'showRegister'])->name('register.show');
+    Route::post('/register', [UserController::class, 'register'])->name('register.store');
+    Route::get('/role', [UserController::class, 'showRole'])->name('role.show');
+    Route::post('/role', [UserController::class, 'storeRole'])->name('role.store');
+    Route::get('/all_user', [UserController::class, 'allUser'])->name('allUsers.show');
+    Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+    Route::get('/user/{id}', [UserController::class, 'edit'])->name('user.edit');
+    Route::put('/user/{id}', [UserController::class, 'update'])->name('user.update');
 });

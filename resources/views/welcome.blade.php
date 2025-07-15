@@ -36,7 +36,7 @@
 
 <body class="bg-slate-50 h-screen ">
     @guest
-        <div class="flex justify-between p-2 px-[110px] fixed  w-full bg-gray-50 z-50">
+        <div class="flex justify-between p-2 fixed  w-[100%] bg-gray-50 z-50">
             <a href="{{ route('home') }}">
                 <h1 class="font-bold text-2xl text-slate-800">Thoughts</h1>
             </a>
@@ -48,12 +48,12 @@
     @endguest
 
     @auth
-        <div class="flex justify-between p-2 px-[110px] bg-slate-50 fixed top-0 w-full z-0">
+        <div class="flex justify-between p-2  bg-slate-50 fixed top-0  w-[100%] z-0 ">
             <a href="{{ route('showblog') }}">
                 <h1 class="font-bold text-2xl text-slate-900">Thoughts</h1>
             </a>
 
-            <div class="flex ml-[810px] space-x-4 items-center">
+            <div class=" space-x-4 items-center  hidden md:flex">
 
                 <a href="{{ route('showblog') }}">Blog</a>
 

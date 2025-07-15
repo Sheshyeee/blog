@@ -84,7 +84,7 @@ class PostsController extends Controller
         $this->authorize('delete', $post);
         $post->delete();
 
-        return redirect()->route('userPosts.show')->with('success', 'Post deleted successfully.');
+        return redirect()->route('userPosts.show')->with('success', 'Post deleted.');
     }
 
     public function edit($id)
