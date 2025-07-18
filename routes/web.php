@@ -21,7 +21,6 @@ Route::middleware(['custom.auth'])->group(function () {
     Route::put('/post/{id}', [PostsController::class, 'update'])->name('posts.update');
     Route::delete('/post/{id}', [PostsController::class, 'destroy'])->name('posts.destroy');
     Route::get('/MyPosts', [PostsController::class, 'userPosts'])->name('userPosts.show');
-
     Route::post('/Comment/{id}', [CommentController::class, 'store'])->name('comment.store');
     Route::post('/Comment/Reply/{id}', [CommentController::class, 'reply'])->name('reply.store');
     Route::delete('/Comment/delete/{id}', [CommentController::class, 'destroy'])->name('comment.destroy');
