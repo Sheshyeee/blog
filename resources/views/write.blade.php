@@ -13,7 +13,7 @@
         <form method="POST" action="{{ route('write') }}" enctype="multipart/form-data">
             @csrf
 
-            <input type="text" name="title" placeholder="Title"
+            <input type="text" name="title" placeholder="Write your Title"
                 class="w-full text-4xl font-bold outline-none border-0 mb-6 placeholder-gray-600 bg-transparent" required>
 
             <textarea name="content" rows="12" placeholder="Tell your story here..."

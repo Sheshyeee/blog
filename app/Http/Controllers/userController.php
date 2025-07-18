@@ -119,12 +119,21 @@ class userController extends Controller
         $validated['role'] = $role;
         $validated['password'] = bcrypt($validated['password']);
 
-        User::create($validated);
+        // Save the user and get the instance
+        $user = User::create($validated);
 
+        // Send email verification
+        $user->sendEmailVerificationNotification();
+
+        // Auto-login
+        Auth::login($user);
+
+        // Clear session role
         Session::forget('selected_role');
 
-        return redirect()->route('showblog')->with('success', 'User created successfully!');
+        return redirect()->route('verification.notice')->with('success', 'User created successfully! Please verify your email.');
     }
+
 
     public function destroy($id)
     {
